@@ -40,3 +40,7 @@ python run.py
 ```
 
 Open `http://localhost:5000` in a browser to see the application.
+
+## Neo-Cyberpunk Theme
+
+The templates now include a dark interface with neon colors inspired by cyberpunk aesthetics. Use the **Glow** slider in the navigation bar to adjust the intensity of the neon effects in real time.
