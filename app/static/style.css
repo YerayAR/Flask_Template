@@ -1,3 +1,7 @@
+/*
+  CSS variables defining the neon color palette used throughout the site.
+  The --glow-strength value is adjusted dynamically via JavaScript.
+*/
 :root {
   --neon-purple: #d927ff;
   --neon-green: #39ff14;
@@ -17,12 +21,14 @@ h1, h2, h3, .navbar-brand {
   text-shadow: 0 0 calc(0.5rem * var(--glow-strength)) var(--neon-blue);
 }
 
+/* Navigation bar styling */
 .navbar {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--neon-purple);
 }
 
+/* Navigation links */
 .nav-link {
   color: var(--neon-purple);
 }
@@ -31,6 +37,7 @@ h1, h2, h3, .navbar-brand {
   text-shadow: 0 0 0.5rem var(--neon-green);
 }
 
+/* Buttons styled with neon colors */
 .btn-neon {
   color: #fff;
   background-color: var(--neon-purple);
@@ -45,6 +52,7 @@ h1, h2, h3, .navbar-brand {
 }
 
 .card-neon {
+  /* Card component with neon border and glow */
   background-color: #111;
   border: 1px solid var(--neon-blue);
   box-shadow: 0 0 calc(0.5rem * var(--glow-strength)) var(--neon-blue);
@@ -54,11 +62,13 @@ h1, h2, h3, .navbar-brand {
   transform: translateY(-5px);
 }
 
+/* Small text glitch effect using keyframes */
 .glitch {
   position: relative;
   animation: glitch 2s infinite;
 }
 
+/* Animation creating a subtle RGB glitch effect */
 @keyframes glitch {
   0% { text-shadow: 0.05rem 0 var(--neon-purple), -0.05rem 0 var(--neon-blue); }
   20% { text-shadow: -0.05rem 0 var(--neon-purple), 0.05rem 0 var(--neon-blue); }
