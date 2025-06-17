@@ -1,9 +1,11 @@
+{# Login page for existing users #}
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="card card-neon p-4 mx-auto" style="max-width:400px;">
   <h2 class="glitch mb-3">Login</h2>
   <form method="post">
+    {# CSRF token hidden field #}
     {{ form.hidden_tag() }}
     <div class="mb-3">
       {{ form.username.label(class="form-label") }}
