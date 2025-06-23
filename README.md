@@ -66,9 +66,9 @@ The repository is organized as follows:
 
 ```mermaid
 flowchart TD
-    runpy[run.py] --> factory[create_app()]
-    factory --> auth[auth blueprint]
-    factory --> main[main blueprint]
+    run[run.py] --> app[create_app]
+    app --> auth[auth blueprint]
+    app --> main[main blueprint]
     auth --> forms
     auth --> models
     main --> forms
