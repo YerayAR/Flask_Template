@@ -14,6 +14,35 @@ Flask extensions.
 
 ## Setup
 
+### Windows (PowerShell)
+
+1. Create a virtual environment and activate it:
+
+```powershell
+python -m venv venv
+venv\Scripts\Activate.ps1
+```
+
+2. Install the dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. Initialize the database:
+
+```powershell
+python -c "from app import create_app, db; app = create_app(); app.app_context().push(); db.create_all()"
+```
+
+4. Run the development server:
+
+```powershell
+python run.py
+```
+
+### Linux/macOS
+
 1. Create a virtual environment and activate it:
 
 ```bash
@@ -30,16 +59,26 @@ pip install -r requirements.txt
 3. Initialize the database:
 
 ```bash
-flask shell -c "from app import db; db.create_all()"
+python3 -c "from app import create_app, db; app = create_app(); app.app_context().push(); db.create_all()"
 ```
 
 4. Run the development server:
 
 ```bash
-python run.py
+python3 run.py
 ```
 
+### Access the Application
+
 Open `http://localhost:5000` in a browser to see the application.
+
+#### Available Routes:
+- `/` - Home page
+- `/login` - User login
+- `/register` - User registration
+- `/contact` - Contact form
+- `/api/contacts` - JSON API for contacts data
+- `/logout` - Logout (redirects to home)
 
 ## Neo-Cyberpunk Theme
 
@@ -66,11 +105,11 @@ The repository is organized as follows:
 
 ```mermaid
 flowchart TD
-    runpy[run.py] --> factory[create_app()]
+    runpy[run.py] --> factory[create_app]
     factory --> auth[auth blueprint]
     factory --> main[main blueprint]
-    auth --> forms
-    auth --> models
+    auth --> forms[forms.py]
+    auth --> models[models.py]
     main --> forms
     main --> models
 ```
